@@ -12,7 +12,7 @@ const AddUser = (props) => {
 		if (+enteredAge < 0) {
 			return;
 		}
-		console.log(enteredUsername, enteredAge);
+		props.onAddUser(enteredUsername, enteredAge);
 		setEnteredAge("");
 		setEnteredUsername("");
 	};
@@ -37,6 +37,7 @@ const AddUser = (props) => {
 					id="username"
 					onChange={usernameHandler}
 					value={enteredUsername}
+					autoFocus
 				/>
 				<label htmlFor="age">Age(in Years)</label>
 				<input
